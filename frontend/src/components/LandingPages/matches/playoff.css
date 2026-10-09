@@ -1,0 +1,15 @@
+.playoffBadge {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.08rem 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd85e, #e6a700);
+  color: #1c1600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}

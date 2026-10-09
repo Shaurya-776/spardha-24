@@ -1,0 +1,311 @@
+/* Football fixtures — built on the legacy ResultFixture.css cards,
+   with extra animated effects for the playoff rounds. */
+
+.footballWrap {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------- Pools ---------------- */
+.footballPools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0.5rem 0 1.4rem;
+}
+
+.footballPool {
+  flex: 1 1 12rem;
+  min-width: 10rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.7rem;
+  background: rgba(73, 130, 246, 0.06);
+  border: 1px solid rgba(73, 130, 246, 0.25);
+  box-shadow: inset 0 0 20px rgba(73, 130, 246, 0.08);
+}
+
+.footballPoolName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4982f6;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.footballPoolTeams {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footballPoolTeams li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #d7deea;
+  padding: 0.12rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.footballPoolTeams li:last-child {
+  border-bottom: none;
+}
+
+/* ---------------- Day tabs ---------------- */
+.footballDayTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.footballDayTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(73, 130, 246, 0.3);
+  color: #9fb0c9;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.footballDayTab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(73, 130, 246, 0.25);
+}
+
+.footballDayTab.active {
+  background: linear-gradient(135deg, #4982f6, #1f3f82);
+  border-color: #4982f6;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(73, 130, 246, 0.5);
+}
+
+.footballTabDay {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.footballTabDate {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* ---------------- Day heading ---------------- */
+.footballDayHeading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.4rem 0 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid rgba(73, 130, 246, 0.4);
+}
+
+.footballDayHeading span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4982f6;
+  margin-left: 0.5rem;
+}
+
+/* ---------------- Cards ---------------- */
+.footballCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footballCard .row1 {
+  align-items: center;
+}
+
+.footballSport {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footballTime {
+  color: #4982f6;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.footballTbdRow {
+  justify-content: center;
+}
+
+.footballTbd {
+  color: #b9c2d0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* ---------------- Playoffs ---------------- */
+.footballPlayoffs {
+  margin-top: 2rem;
+}
+
+.footballPlayoffTitleWrap {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.footballPlayoffTitle {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffd25a, #fff3c4, #ff9d2e, #ffd25a);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: footballTitleShift 4s linear infinite;
+}
+
+.footballPlayoffSub {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #9fb0c9;
+}
+
+.footballRound {
+  margin-bottom: 1.6rem;
+}
+
+.footballRoundTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffe9b0;
+  padding-left: 0.7rem;
+  border-left: 3px solid #ffd25a;
+}
+
+/* Enhanced playoff card: rotating gold border + pulsing glow + shine sweep */
+.footballPlayoffCard {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #17120a, #000000);
+  border: 1px solid rgba(255, 210, 90, 0.35);
+  animation: footballPulse 2.8s ease-in-out infinite;
+}
+
+.footballPlayoffCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #ffd25a, #ff9d2e, #fff3c4, #ffb347, #ffd25a);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: footballSpin 4.5s linear infinite;
+  pointer-events: none;
+}
+
+.footballPlayoffCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: skewX(-20deg);
+  animation: footballShine 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.footballPlayoffCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footballPlayoffCard .row1 {
+  color: #ffd25a;
+}
+
+.footballPlayoffCard .row3 {
+  color: #ffe9b0;
+}
+
+.footballBadge {
+  margin-left: 0.5rem;
+}
+
+/* ---------------- Notes ---------------- */
+.footballNotes {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: 0.7rem;
+  background: rgba(73, 130, 246, 0.06);
+  border: 1px solid rgba(73, 130, 246, 0.2);
+}
+
+.footballNotes p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #9fb0c9;
+}
+
+/* ---------------- Keyframes ---------------- */
+@keyframes footballSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes footballPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(255, 210, 90, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(255, 210, 90, 0.6);
+  }
+}
+
+@keyframes footballShine {
+  0% {
+    left: -60%;
+  }
+  55%,
+  100% {
+    left: 130%;
+  }
+}
+
+@keyframes footballTitleShift {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 1050px) {
+  .footballPools {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .footballDayTab {
+    flex: 1 1 40%;
+  }
+
+  .footballPool {
+    flex: 1 1 100%;
+  }
+}

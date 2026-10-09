@@ -1,0 +1,378 @@
+.vbWrap {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.vbDayTabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vbDayTab {
+  min-width: 8rem;
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid #4982f6;
+  background: transparent;
+  color: #4982f6;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.vbDayTab:hover {
+  background: rgba(73, 130, 246, 0.15);
+}
+
+.vbDayTab.active {
+  background: linear-gradient(135deg, #4982f6, #2f63d6);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(73, 130, 246, 0.65);
+}
+
+.vbColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.vbColumn {
+  --vb-accent: #4982f6;
+  --vb-accent-dark: #1f3f82;
+  --vb-glow: rgba(73, 130, 246, 0.16);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+      130% 120% at 50% 0%,
+      var(--vb-glow),
+      rgba(0, 0, 0, 0) 60%
+    ),
+    rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+.vbGirls {
+  --vb-accent: #e05fa0;
+  --vb-accent-dark: #7d1f52;
+  --vb-glow: rgba(224, 95, 160, 0.16);
+}
+
+.vbColHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--vb-accent);
+}
+
+.vbColTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--vb-accent), #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vbColDate {
+  color: #989898;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vbPoolsTitle {
+  color: var(--vb-accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  margin-bottom: 0.6rem;
+}
+
+.vbPools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.vbPool {
+  flex: 1 1 45%;
+  min-width: 8.5rem;
+  min-height: 8.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.vbPool:hover {
+  border-color: var(--vb-accent);
+  box-shadow: 0 0 10px var(--vb-glow);
+}
+
+.vbPoolName {
+  color: var(--vb-accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.vbPoolTeams {
+  margin: 0;
+  padding-left: 1rem;
+  color: #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.vbSection {
+  margin-bottom: 1.25rem;
+}
+
+.vbSection:last-child {
+  margin-bottom: 0;
+}
+
+.vbSectionHeading {
+  margin: 0 0 0.6rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-left: 3px solid var(--vb-accent);
+  padding-left: 0.6rem;
+}
+
+.vbSection.playoff {
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(230, 167, 0, 0.5);
+  background: rgba(230, 167, 0, 0.07);
+}
+
+.vbSection.playoff .vbSectionHeading {
+  color: #e6a700;
+  border-left-color: #e6a700;
+}
+
+.vbBreak {
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  color: var(--vb-accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed var(--vb-accent);
+}
+
+.vbTable {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vbTableRow {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1.5fr 0.8fr;
+  align-items: center;
+}
+
+.vbTableRow:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.vbTableHead {
+  background: var(--vb-glow);
+}
+
+.vbCell {
+  padding: 0.5rem 0.6rem;
+  color: #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  word-break: break-word;
+}
+
+.vbTableHead .vbCell {
+  color: var(--vb-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04rem;
+}
+
+.vbCellTeam {
+  text-align: left;
+}
+
+.vbCellTime {
+  color: var(--vb-accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vbList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vbListRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+}
+
+.vbListRow:hover {
+  border-color: var(--vb-accent);
+  box-shadow: 0 0 10px var(--vb-glow);
+}
+
+.vbListTime {
+  flex-shrink: 0;
+  width: 8.5rem;
+  color: var(--vb-accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.vbTeams {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vbTeam {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vbVs {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 1.4rem;
+  width: 1.4rem;
+  background-color: #ffffff;
+  -webkit-mask: url('./icon/vs.png') center / contain no-repeat;
+  mask: url('./icon/vs.png') center / contain no-repeat;
+  filter: drop-shadow(0 0 5px var(--vb-glow));
+}
+
+.vbBoys .vbVs {
+  background-color: var(--vb-accent);
+}
+
+.vbGirls .vbVs {
+  background-color: var(--vb-accent);
+}
+
+.vbMatchText {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vbTbd {
+  color: #777777;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.vbNotes {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(73, 130, 246, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(73, 130, 246, 0.16),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.vbNotes p {
+  margin: 0;
+  color: #cfd8e3;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 993px) {
+  .vbColumns {
+    grid-template-columns: 1fr;
+  }
+  .vbWrap {
+    padding: 1rem 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .vbDayTab {
+    min-width: 0;
+    flex: 1;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .vbColTitle {
+    font-size: 1.25rem;
+  }
+  .vbTableRow {
+    grid-template-columns: 1.4fr 0.7fr 1.4fr 0.7fr;
+  }
+  .vbCell {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.3rem;
+  }
+  .vbListTime {
+    width: 6.5rem;
+    font-size: 0.72rem;
+  }
+  .vbTeam,
+  .vbMatchText {
+    font-size: 0.8rem;
+  }
+}

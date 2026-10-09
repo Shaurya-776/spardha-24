@@ -1,0 +1,299 @@
+.hockeyWrap {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hockeyDayTabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.hockeyDayTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 8rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 2rem;
+  border: 2px solid #4982f6;
+  background: transparent;
+  color: #4982f6;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.25s ease;
+}
+
+.hockeyDayTab:hover {
+  background: rgba(73, 130, 246, 0.15);
+}
+
+.hockeyDayTab.active {
+  background: linear-gradient(135deg, #4982f6, #2f63d6);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(73, 130, 246, 0.65);
+}
+
+.hockeyTabDay {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.hockeyTabDate {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.hockeyDayPanel {
+  width: 100%;
+  flex: 1;
+  padding: 1rem 1.25rem 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: radial-gradient(
+      130% 120% at 50% 0%,
+      rgba(73, 130, 246, 0.18),
+      rgba(0, 0, 0, 0) 60%
+    ),
+    rgba(0, 0, 0, 0.55);
+}
+
+.hockeyDayHeading {
+  margin: 0 0 1rem;
+  padding: 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  background: linear-gradient(90deg, #4982f6, #9dbcff, #4982f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hockeyDayHeading::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin: 0.45rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4982f6, #9dbcff);
+}
+
+.hockeyMatches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.hockeyMatch {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(73, 130, 246, 0.12),
+    rgba(0, 0, 0, 0.92)
+  );
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hockeyMatch:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 1px 2px #4982f6, 0 0 18px rgba(73, 130, 246, 0.35);
+}
+
+.hockeyMatch.playoff {
+  border: 1px solid rgba(230, 167, 0, 0.6);
+  background: linear-gradient(
+    135deg,
+    rgba(230, 167, 0, 0.14),
+    rgba(0, 0, 0, 0.9)
+  );
+  box-shadow: 0 0 1px 2px rgba(230, 167, 0, 0.2);
+}
+
+.hockeyMatch.playoff:hover {
+  box-shadow: 0 0 1px 2px #e6a700;
+}
+
+.hockeyMatch.playoff .hockeyMatchNo,
+.hockeyMatch.playoff .hockeyMatchTime {
+  color: #e6a700;
+}
+
+.hockeyMatchMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  min-width: 7.5rem;
+  padding-left: 0.6rem;
+  border-left: 3px solid #4982f6;
+}
+
+.hockeyMatch.playoff .hockeyMatchMeta {
+  border-left-color: #e6a700;
+}
+
+.hockeyMatchNo {
+  color: #4982f6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hockeyMatchTime {
+  color: #989898;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hockeyTeams {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.hockeyTeam {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.hockeyTeam::before {
+  content: '';
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 1.5rem;
+  border-radius: 0.35rem;
+  background: linear-gradient(135deg, #4982f6, #1f3f82);
+  box-shadow: 0 0 8px rgba(73, 130, 246, 0.45);
+}
+
+.hockeyVs img {
+  height: 2.2rem;
+  width: 2.2rem;
+  filter: drop-shadow(0 0 6px rgba(73, 130, 246, 0.6));
+}
+
+.hockeyNotes {
+  margin-top: 1.25rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(73, 130, 246, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(73, 130, 246, 0.16),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.hockeyNotes p {
+  margin: 0 0 0.35rem;
+  color: #cfd8e3;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hockeyNotes p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 993px) {
+  .hockeyWrap {
+    padding: 0.75rem 0.75rem 1rem;
+  }
+  .hockeyMatch {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  .hockeyMatchMeta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+  }
+  .hockeyTeams {
+    gap: 1rem;
+  }
+  .hockeyTeam {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .hockeyDayTabs {
+    gap: 0.6rem;
+  }
+  .hockeyDayTab {
+    min-width: 0;
+    flex: 1;
+    padding: 0.55rem 0.75rem;
+  }
+  .hockeyTabDay {
+    font-size: 0.95rem;
+  }
+  .hockeyTabDate {
+    font-size: 0.75rem;
+  }
+  .hockeyDayHeading {
+    font-size: 1.3rem;
+  }
+  .hockeyTeams {
+    gap: 0.5rem;
+  }
+  .hockeyTeam {
+    font-size: 0.95rem;
+  }
+  .hockeyTeam::before {
+    width: 1.6rem;
+    height: 1.1rem;
+  }
+  .hockeyVs img {
+    height: 2rem;
+    width: 2rem;
+  }
+  .hockeyNotes {
+    padding: 1rem;
+  }
+  .hockeyNotes p {
+    font-size: 0.85rem;
+  }
+}

@@ -4,11 +4,12 @@ import './ResultFixture.css';
 import versus from './icon/vs.png'
 // import cricket_img from '../Events/image/crickethover.png';
 // import badminton_img from '../Events/image/badmintonhover.png';
-const Fixtures = ({ selectedSport , selectedDate}) => {
+const Fixtures = ({ selectedSport, selectedDate, allMatches }) => {
   const [matchData, setMatchData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!allMatches);
 
   useEffect(() => {
+    if (allMatches) return;
     const apiUrl = process.env.REACT_APP_MICROSERVICE_URL;
     axios
       .get(`${apiUrl}/api/v1/games/`)
@@ -21,12 +22,14 @@ const Fixtures = ({ selectedSport , selectedDate}) => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []);
-  
+  }, [allMatches]);
+
+  const source = allMatches || matchData;
+
     const filterMatches =
     selectedSport === 'All'
-      ? matchData
-      : matchData.filter((match) => match.game_name === selectedSport);
+      ? source
+      : source.filter((match) => match.game_name === selectedSport);
 
   const filteredMatches =
     selectedDate === 'All'

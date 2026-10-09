@@ -3,6 +3,10 @@ import styles from './Matches.module.css';
 import Carousel from '../Home/Carousel/Carouselhp';
 import Fixtures from './Fixtures';
 import MatchResults from './Result';
+import HockeyFixtures from './HockeyFixtures';
+import VolleyballFixtures from './VolleyballFixtures';
+import FootballFixtures from './FootballFixtures';
+import AllFixtures from './AllFixtures';
 
 const Matches = () => {
   const [activeTab, setActiveTab] = useState('Fixtures');
@@ -136,6 +140,7 @@ const Matches = () => {
                 />
               </svg>
             </div>
+            {selectedSport !== 'All' && selectedSport !== 'Hockey' && selectedSport !== 'Volleyball' && selectedSport !== 'Football' && (
             <div className={`${styles.date}`}>
               {/* <label htmlFor="dateSelect">Select a Date:</label> */}
               <select
@@ -152,8 +157,17 @@ const Matches = () => {
               </select>
               {/* <p>Selected Date: {selectedDate}</p> */}
             </div>
+            )}
             <div className={`${styles.scrollablediv}`}>
-              {activeTab === 'Fixtures' ? (
+              {selectedSport === 'All' ? (
+                <AllFixtures />
+              ) : selectedSport === 'Hockey' ? (
+                <HockeyFixtures />
+              ) : selectedSport === 'Volleyball' ? (
+                <VolleyballFixtures />
+              ) : selectedSport === 'Football' ? (
+                <FootballFixtures />
+              ) : activeTab === 'Fixtures' ? (
                 <Fixtures selectedSport={selectedSport} selectedDate={selectedDate} />
               ) : (
                 <MatchResults selectedSport={selectedSport} selectedDate={selectedDate}/>
