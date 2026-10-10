@@ -48,11 +48,19 @@ function ListTable({ rows }) {
       {rows.map((row, index) => (
         <div className="vbListRow" key={index}>
           <span className="vbListTime">{row.time}</span>
-          {row.match ? (
-            <TeamMatch match={row.match} />
-          ) : (
-            <span className="vbTbd">To be decided</span>
-          )}
+          <div className="vbListMain">
+            {row.match ? (
+              <TeamMatch match={row.match} />
+            ) : (
+              <span className="vbTbd">To be decided</span>
+            )}
+            {row.winner && (
+              <span className="vbWinner">
+                <span className="vbWinnerLabel">Winner</span>
+                <span className="vbWinnerTeam">{row.winner}</span>
+              </span>
+            )}
+          </div>
         </div>
       ))}
     </div>

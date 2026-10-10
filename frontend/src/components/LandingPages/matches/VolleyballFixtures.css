@@ -259,6 +259,42 @@
   transition: all 0.25s ease;
 }
 
+.vbListMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.vbWinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.5rem;
+  background: rgba(76, 175, 80, 0.14);
+  border: 1px solid rgba(76, 175, 80, 0.45);
+  white-space: nowrap;
+}
+
+.vbWinnerLabel {
+  color: #7cd481;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.vbWinnerTeam {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .vbListRow:hover {
   border-color: var(--vb-accent);
   box-shadow: 0 0 10px var(--vb-glow);

@@ -22,12 +22,13 @@ const footballFixtures = {
       label: 'Day 1',
       date: '09/10/2026',
       matches: [
+        { time: '6:30 - 7:30 am', match: 'IIT BHU B vs Galgotiya', reporting: '6:00 am' },
         { time: '7:30 - 8:30 am', match: 'ARSD vs BBD', reporting: '7:00 am' },
         { time: '8:30 - 9:30 am', match: 'VTI vs KNIT Sultanpur', reporting: '8:00 am' },
         { time: '9:30 - 10:30 am', match: 'Galgotiya vs VIT Bhopal', reporting: '9:00 am' },
-        { time: '6:00 - 7:00 pm', match: 'IIT BHU A vs KNIT', reporting: '5:30 pm' },
-        { time: '7:00 - 8:00 pm', match: 'IIT BHU B vs REC', reporting: '6:30 pm' },
-        { time: '8:00 - 9:00 pm', match: 'VIT Bhopal vs BIT Mesra', reporting: '7:30 pm' },
+        { time: '6:40 - 7:40 pm', match: 'IIT BHU A vs KNIT', reporting: '6:00 pm' },
+        { time: '7:40 - 8:40 pm', match: 'IIT BHU B vs REC', reporting: '7:00 pm' },
+        { time: '8:40 - 9:40 pm', match: 'VIT Bhopal vs BIT Mesra', reporting: '8:00 pm' },
       ],
     },
     {
